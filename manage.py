@@ -1,9 +1,10 @@
-from seth-site import create_app, freezer
+#!/usr/bin/env python
+
+from seth_site import app, freezer
 from flask.ext.script import Manager
 import os
 from config import config
 
-app = create_app('default')
 manager = Manager(app)
 
 @manager.command
