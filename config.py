@@ -2,7 +2,8 @@ class Config:
     FREEZER_RELATIVE_URLS = True
     FREEZER_DESTINATION_IGNORE = [
         '.gitignore',
-        '.git/'
+        '.git/',
+        '.htaccess'
     ]
     FREEZER_IGNORE_404_NOT_FOUND = True
 
