@@ -18,6 +18,7 @@ class Config:
         '.gitignore',
         '.git/'
     ]
+    FREEZER_IGNORE_404_NOT_FOUND = True
 
     @staticmethod
     def init_app(app):
