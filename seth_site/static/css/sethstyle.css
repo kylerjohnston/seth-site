@@ -44,12 +44,19 @@ body {
 }
 
 .featurette-green {
-  background-color: #85d077;
+  background-color: #fdfdfd; 
+  /* background: -webkit-linear-gradient(left top, #629935, #7bc043);
+  background: -o-linear-gradient(bottom right, #629935, #7bc043);
+  background: -moz-linear-gradient(bottom right, #629935, #7bc043);
+  background: linear-gradient(bottom right, #629935, #7bc043);*/
+
+  /***** Colorscheme 1 *******/
+  /* background-color: #85d077;
   background: -webkit-linear-gradient(left top, #85d077, #6aa65f);
   background: -o-linear-gradient(bottom right, #85d077, #6aa65f);
   background: -moz-linear-gradient(bottom right, #85d077, #6aa65f);
-  background: linear-gradient(bottom right, #85d077, #6aa65f);
-  color: #fdfdfd;
+  background: linear-gradient(bottom right, #85d077, #6aa65f); */
+  color: #777777;
 }
 
 .custom-img {
@@ -72,16 +79,22 @@ body {
 }
 
 .f-dark {
-  background-color: #485566;
+  background-color: #365674;
   color: #fdfdfd;
-/*  background: -webkit-linear-gradient(left top, #85d077, #6aa65f);
-  background: -o-linear-gradient(bottom right, #85d077, #6aa65f);
-  background: -moz-linear-gradient(bottom right, #85d077, #6aa65f);
-  background: linear-gradient(bottom right, #85d077, #6aa65f);*/
+  background: -webkit-linear-gradient(left top, #365674, #72889d);
+  background: -o-linear-gradient(left top, #365674, #72889d);
+  background: -moz-linear-gradient(left top, #365674, #72889d);
+  background: linear-gradient(left top, #365674, #72889d);
 }
 
 .f-red {
-  background-color: #c66a83;
+  background-color: #6aa65f;
+  /*
+  background: -webkit-linear-gradient(left top, #a5c99f, #6aa65f);
+  background: -o-linear-gradient(bottom right, #a5c99f, #6aa65f);
+  background: -moz-linear-gradient(bottom right, #a5c99f, #6aa65f);
+  background: linear-gradient(bottom right, #a5c99f, #6aa65f);
+  */
   color: #fdfdfd;
 }
 
@@ -89,6 +102,20 @@ footer {
   padding: 3em 2em 0em 2em;
 }
 
+.dl-horizontal {
+  font-size: 1.2em;
+}
+
+.dl-horizontal dd {
+  font-weight: 300;
+}
+
 .dl-horizontal dt {
   white-space: normal !important;
+  font-weight: 400;
+  color: #b4d2af;
+}
+
+.grn {
+  color: #6aa65f;
 }
