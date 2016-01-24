@@ -1,11 +1,11 @@
 /* Adapted from Bootstrap's carousel.css */
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700);
 
 body {
   font-family: 'Roboto', sans-serif;
-  padding: 50px 0px 40px 0px;
+  padding: 50px 0px 0px 0px;
   color: #777777;
-  background-color: #fdfdfd;
+  background-color: #b4d2af;
 }
 
 .featurette {
@@ -65,7 +65,7 @@ body {
 
 .navbar-default {
   background-color: #fdfdfd;
-  border: 0;
+  border-bottom: 1px solid #b4d2af;
   padding: 0;
   margin-bottom: 0;
 }
@@ -99,7 +99,11 @@ body {
 }
 
 footer {
-  padding: 3em 2em 0em 2em;
+  padding: 2em 0em 1em 0em;
+}
+
+.wht {
+  background-color: #fdfdfd;
 }
 
 .dl-horizontal {
@@ -118,4 +122,8 @@ footer {
 
 .grn {
   color: #6aa65f;
+}
+
+strong {
+  font-weight: 700;
 }
