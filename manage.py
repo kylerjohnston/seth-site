@@ -16,7 +16,8 @@ def build():
     subprocess.run(['/usr/bin/tar', '-zcvf',
                     '{}/seth_site.tar.gz'.format(basedir),
                     '-C',
-                    '{}/seth_site/build/'.format(basedir)])
+                    '{}/seth_site/build/'.format(basedir),
+                    '.'])
 
 if __name__ == '__main__':
     manager.run()
