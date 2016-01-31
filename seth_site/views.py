@@ -10,6 +10,10 @@ def index():
 def platform():
     return render_template('issues.html')
 
+@app.route('/contribute/')
+def contribute():
+    return render_template('contribute.html')
+
 @freezer.register_generator
 def error_handlers():
     yield '/404/'
