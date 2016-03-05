@@ -1,12 +1,4 @@
 class Config:
-    FREEZER_RELATIVE_URLS = True
-    FREEZER_DESTINATION_IGNORE = [
-        '.gitignore',
-        '.git/',
-        '.htaccess'
-    ]
-    FREEZER_IGNORE_404_NOT_FOUND = True
-
     @staticmethod
     def init_app(app):
         pass
