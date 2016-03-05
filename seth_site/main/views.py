@@ -1,19 +1,15 @@
-from manage import app
 from flask import render_template
-from seth_site import freezer
+from . import main
 
-@app.route('/')
+@main.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/issues/')
+@main.route('/issues/')
 def platform():
     return render_template('issues.html')
 
-@app.route('/contribute/')
+@main.route('/contribute/')
 def contribute():
     return render_template('contribute.html')
 
-@freezer.register_generator
-def error_handlers():
-    yield '/404/'
