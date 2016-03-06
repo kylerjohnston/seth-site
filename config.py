@@ -1,8 +1,10 @@
 import os
+from env import *
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
+    SECRET_KEY = SECRET_KEY
     @staticmethod
     def init_app(app):
         pass

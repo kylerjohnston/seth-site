@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Seth Baker - Login{% endblock %}
+
+{% block page_content %}
+<div class="row featurette featurette-green">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <h2>Login</h2>
+    <form action="{{ url_for('auth.login') }}" method="POST" enctype="multipart/form-data">
+      {{ form.csrf_token }}
+      {{ form.username.label }} {{ form.username }}
+      {{ form.password.label }} {{ form.password }}
+      {{ form.submit }}
+    </form>
+  </div>
+</div>
+{% endblock %}
