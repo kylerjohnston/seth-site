@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Seth Baker - {{ post.title }}{% endblock %}
+
+{% block page_content %}
+<div class="row featurette f-dark">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <h2 class="featurette-heading">{{ post.title }}</h2>
+    <small>Posted by {{ post.user.name }} on {{ post.date.strftime('%m-%d-%Y') }}</small>
+    <p>{{ post.content_html | safe }}</p>
+  </div>
+</div>
+
+{% endblock %}

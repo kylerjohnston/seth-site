@@ -28,6 +28,7 @@
           <ul class="nav navbar-nav">
             <li><a href="{{ url_for('main.platform') }}">Our Platform</a></li>
             <li><a href="{{ url_for('main.contribute') }}">Contribute</a></li>
+            <li><a href="{{ url_for('blog.root') }}">Campaign blog</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <!-- Facebook & Twitter links -->
@@ -35,11 +36,28 @@
                   fa-facebook-official"></i>&nbsp;&nbsp;Facebook</a></li>
             <li><a href="mailto:seth@sethbaker.me"><i class="fa
                   fa-envelope"></i>&nbsp;&nbsp;Email</a></li>
-            <!-- Would form email work better? Prevent spam; but annoying? Or more professional? -->
+            {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('blog.new') }}">New blog post</a></li>
+            <li><a href="{{ url_for('auth.logout') }}">Log out</a></li>
+            {% endif %}
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+    {% endblock %}
+
+    {% block flashed_messages %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="row col-md-6 col-md-offset-3">
+      <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {% endwith %}
     {% endblock %}
 
     <div class="container-fluid marketing">

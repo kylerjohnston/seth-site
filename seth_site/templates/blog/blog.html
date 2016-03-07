@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Seth Baker - Campaign blog{% endblock %}
+
+{% block page_content %}
+
+{% for post in posts %}
+<div class="row featurette featurette-green">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <h2 class="featurette-heading"><a href="{{ url_for('blog.post', post_name = post.slug) }}">{{ post.title }}</a></h2>
+    <small>Posted by {{ post.user.name }} on {{ post.date.strftime('%m-%d-%Y') }}</small>
+    <p>{{ post.content_html | safe }}</p>
+  </div>
+</div>
+{% endfor %}
+
+<div class="row featurette featurette-green">
+  <div class="col-md-4 col-md-offset-4 text-center">
+    {% if older_pages %}
+    <a href="{{ url_for('blog.pages', pagenumber = page_num - 1) }}" class="btn btn-primary">Newer posts</a>
+    {% else %}
+    <a class="btn btn-default disabled">Newer posts</a>
+    {% endif %}
+    {% if newer_pages %}
+    <a href="{{ url_for('blog.pages', pagenumber = page_num + 1) }}" class="btn btn-primary">Older posts</a>
+    {% else %}
+    <a class="btn btn-default disabled">Older posts</a>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
