@@ -69,18 +69,19 @@
       {% block page_content %}
       {% endblock %}
       
-      {% block footer %}
       <div class="row">
         <div class="col-xs-12 wht">
           <footer>
+            {% block footer %}
             <p class="text-center"><p>
             <p class="text-center">Paid for and authorized by The Committee to
             Elect Seth Baker. &copy; Copyright 2016 The Committee to Elect
             Seth Baker.</p>
+            {% endblock %}
+            {% block additional_footer %}{% endblock %}
           </footer>
         </div>
       </div>
-      {% endblock %}
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>

@@ -27,12 +27,12 @@
     <a class="btn btn-large btn-default" href="{{ url_for('main.platform') }}">Read more about the issues</a>
   </div>
   <div class="col-md-5 col-xs-0">
-    <span></span>
+    <img src="{{ url_for('static', filename='img/blue_maine.svg') }}" alt="Maine" class="img-responsive" id="maine-img">
   </div>
 </div>
 <div class="row featurette f-red">
   <div class="col-md-5 col-xs-0">
-    <span></span>
+    <img src="{{ url_for('static', filename='img/vote.svg') }}" alt="Vote!" class="img-responsive" id="vote-img">
   </div>
   <div class="col-md-7 col-xs-12">
     <h2 class="featurette-heading">Contribute</h2>
@@ -41,4 +41,8 @@
   </div>
 </div>
 
+{% endblock %}
+
+{% block additional_footer %}
+<p class="text-center">Vote! icon made by <a href="http://www.freepik.com">Freepik</a> from <a href="http://www.flaticon.com">www.flaticon.com</a>.</p>
 {% endblock %}
