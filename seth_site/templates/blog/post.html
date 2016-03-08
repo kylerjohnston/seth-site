@@ -6,7 +6,10 @@
 <div class="row featurette f-dark">
   <div class="col-xs-12 col-md-8 col-md-offset-2">
     <h2 class="featurette-heading">{{ post.title }}</h2>
-    <small>Posted by {{ post.user.name }} on {{ post.date.strftime('%m-%d-%Y') }}</small>
+    <small>Posted by {{ post.user.name }} on {{ post.date.strftime('%m-%d-%Y') }}.</small>
+    {% if post.last_modified %}
+    <small>Last modified {{ post.last_modified.strftime('%m-%d-%Y at %I:%M%p') }}.</small>
+    {% endif %}
     <p>{{ post.content_html | safe }}</p>
   </div>
 </div>

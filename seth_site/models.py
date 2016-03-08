@@ -46,8 +46,8 @@ class Post(db.Model):
     slug = db.Column(db.String)
 
     @staticmethod
-    def on_changed_body(target, value, oldvalue, initiator):
-        allowed_tags = ['a', 'b', 'blockquote', 'code',
+    def on_changed_body(target, value, old_value, initiator):
+        allowed_tags = ['a', 'abbr', 'acronym', 'b', 'blockquote', 'code',
                         'em', 'i', 'li', 'ol', 'pre', 'strong', 'ul',
                         'h1', 'h2', 'h3', 'p']
         target.content_html = bleach.linkify(bleach.clean(
@@ -60,7 +60,6 @@ class Post(db.Model):
         slug = '-'.join(stripped.lower().split())
         target.slug = slug
 
-    
     def __repr__(self):
         return '<Post {}>>'.format(self.title)
 

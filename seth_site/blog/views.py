@@ -1,7 +1,7 @@
 from . import blog
 from flask import render_template, redirect, url_for, flash, abort
 from flask_login import login_required, current_user
-from .forms import PostForm
+from .forms import PostForm, DeleteForm
 from ..models import Post
 from .. import db
 import datetime
@@ -76,3 +76,34 @@ def post(post_name):
                                post = post)
     else:
         return abort(404)
+
+@blog.route('/edit/<postid>/', methods=['GET', 'POST'])
+@login_required
+def edit(postid):
+    post = Post.query.get_or_404(int(postid))
+    form = PostForm()
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.content = form.content.data
+        post.last_modified = datetime.datetime.today()
+        db.session.add(post)
+        db.session.commit()
+        return redirect(url_for('blog.post', post_name = post.slug))
+    form.title.data = post.title
+    form.content.data = post.content
+    return render_template('blog/edit.html',
+                           form = form,
+                           postid = postid)
+
+@blog.route('/rm/<postid>', methods = ['GET', 'POST'])
+@login_required
+def delete(postid):
+    form = DeleteForm()
+    post = Post.query.get_or_404(int(postid))
+    if form.validate_on_submit():
+        db.session.delete(post)
+        db.session.commit()
+        return redirect(url_for('main.index'))
+    return render_template('blog/delete.html',
+                           form = form,
+                           post = post)
