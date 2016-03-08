@@ -4,16 +4,25 @@
 
 {% block page_content %}
 
+<div class="row featurette featurette-green">
+  <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
+    <h2 class="featurette-heading">Campaign blog</h2>
+    <hr />
+  </div>
+</div>
+
 {% for post in posts %}
 <div class="row featurette featurette-green">
-  <div class="col-xs-12 col-md-8 col-md-offset-2">
-    <h2 class="featurette-heading">
+  <div class="col-xs-12 col-md-4">
+    <h2>
       <a href="{{ url_for('blog.post', post_name = post.slug) }}" class="blog-heading">{{ post.title }}</a>
     </h2>
     <small>Posted by {{ post.user.name }} on {{ post.date.strftime('%m-%d-%Y') }}.</small>
     {% if post.last_modified %}
-    <small>Last modified {{ post.last_modified.strftime('%m-%d-%Y at %I:%M%p') }}.</small>
+    <br /><small>Last modified {{ post.last_modified.strftime('%m-%d-%Y at %I:%M%p') }}.</small>
     {% endif %}
+  </div>
+  <div class="col-xs-12 col-md-8">
     <div class="post">
       {{ post.content_html | safe }}
     </div>

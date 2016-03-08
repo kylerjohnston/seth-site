@@ -5,7 +5,12 @@ body {
   font-family: 'Roboto', sans-serif;
   padding: 50px 0px 0px 0px;
   color: #777777;
-  background-color: #b4d2af;
+  background-color: #fdfdfd;
+}
+
+.f-light-green {
+  background-color: #72889d;
+  color: #fdfdfd;
 }
 
 .featurette {
@@ -45,17 +50,6 @@ body {
 
 .featurette-green {
   background-color: #fdfdfd; 
-  /* background: -webkit-linear-gradient(left top, #629935, #7bc043);
-  background: -o-linear-gradient(bottom right, #629935, #7bc043);
-  background: -moz-linear-gradient(bottom right, #629935, #7bc043);
-  background: linear-gradient(bottom right, #629935, #7bc043);*/
-
-  /***** Colorscheme 1 *******/
-  /* background-color: #85d077;
-  background: -webkit-linear-gradient(left top, #85d077, #6aa65f);
-  background: -o-linear-gradient(bottom right, #85d077, #6aa65f);
-  background: -moz-linear-gradient(bottom right, #85d077, #6aa65f);
-  background: linear-gradient(bottom right, #85d077, #6aa65f); */
   color: #777777;
 }
 

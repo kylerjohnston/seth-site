@@ -10,7 +10,9 @@
     {% if post.last_modified %}
     <small>Last modified {{ post.last_modified.strftime('%m-%d-%Y at %I:%M%p') }}.</small>
     {% endif %}
-    <p>{{ post.content_html | safe }}</p>
+    <div class="post">
+      <p>{{ post.content_html | safe }}</p>
+    </div>
   </div>
 </div>
 
