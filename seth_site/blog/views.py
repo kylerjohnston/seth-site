@@ -19,11 +19,6 @@ def page_test(page_num, pages):
 
     return older_pages, newer_pages
 
-@blog.route('/admin')
-@login_required
-def admin():
-    return render_template('blog/admin.html')
-
 @blog.route('/new', methods = ['GET', 'POST'])
 @login_required
 def new():
@@ -36,7 +31,7 @@ def new():
             user = current_user)
         db.session.add(new_post)
         db.session.commit()
-        return redirect(url_for('blog.admin'))
+        return redirect(url_for('blog.root'))
     return render_template('blog/new.html', form = form)
 
 @blog.route('/')

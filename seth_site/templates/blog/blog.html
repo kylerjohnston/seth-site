@@ -8,14 +8,15 @@
 <div class="row featurette featurette-green">
   <div class="col-xs-12 col-md-8 col-md-offset-2">
     <h2 class="featurette-heading">
-
-      <a href="{{ url_for('blog.post', post_name = post.slug) }}">{{ post.title }}</a>
+      <a href="{{ url_for('blog.post', post_name = post.slug) }}" class="blog-heading">{{ post.title }}</a>
     </h2>
     <small>Posted by {{ post.user.name }} on {{ post.date.strftime('%m-%d-%Y') }}.</small>
     {% if post.last_modified %}
     <small>Last modified {{ post.last_modified.strftime('%m-%d-%Y at %I:%M%p') }}.</small>
     {% endif %}
-    <p>{{ post.content_html | safe }}</p>
+    <div class="post">
+      {{ post.content_html | safe }}
+    </div>
     {% if current_user.is_authenticated %}
     <small><a href="{{ url_for('blog.edit', postid = post.id) }}"><i class="fa fa-pencil"></i> edit</a>&nbsp;&nbsp;<a href="{{ url_for('blog.delete', postid = post.id) }}"><i class="fa fa-trash"></i> delete</a></small>
     {% endif %}

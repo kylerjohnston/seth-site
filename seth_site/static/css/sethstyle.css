@@ -133,3 +133,15 @@ strong {
   white-space: normal !important; /* force word wrap on buttons */
 }
 
+a.blog-heading {
+  color: #6aa65f;
+}
+
+a.blog-heading:hover {
+  color: #4f7c47;
+}
+
+.post {
+  margin-top: 1em;
+  font-size: 16px;
+}

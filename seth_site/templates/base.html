@@ -37,7 +37,8 @@
             <li><a href="mailto:seth@sethbaker.me"><i class="fa
                   fa-envelope"></i>&nbsp;&nbsp;Email</a></li>
             {% if current_user.is_authenticated %}
-            <li><a href="{{ url_for('blog.new') }}">New blog post</a></li>
+            <li><a href="{{ url_for('blog.new') }}"><i class="fa fa-plus"></i> New post</a></li>
+            <li><a href="{{ url_for('auth.settings', userid = current_user.id) }}"><i class="fa fa-cog"></i> Settings</a></li>
             <li><a href="{{ url_for('auth.logout') }}">Log out</a></li>
             {% endif %}
           </ul>
@@ -49,12 +50,16 @@
     {% block flashed_messages %}
     {% with messages = get_flashed_messages() %}
     {% if messages %}
-    <div class="row col-md-6 col-md-offset-3">
-      <ul>
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-      </ul>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="alert alert-success">
+          <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     </div>
     {% endif %}
     {% endwith %}
