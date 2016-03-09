@@ -4,7 +4,7 @@
 
 {% block page_content %}
 
-<div class="row featurette featurette-green">
+<div class="row featurette f-dark">
   <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
     <h2 class="featurette-heading">Campaign blog</h2>
     <hr />
@@ -29,6 +29,7 @@
     {% if current_user.is_authenticated %}
     <small><a href="{{ url_for('blog.edit', postid = post.id) }}"><i class="fa fa-pencil"></i> edit</a>&nbsp;&nbsp;<a href="{{ url_for('blog.delete', postid = post.id) }}"><i class="fa fa-trash"></i> delete</a></small>
     {% endif %}
+    <hr />
   </div>
 </div>
 {% endfor %}
