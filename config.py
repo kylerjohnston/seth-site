@@ -4,7 +4,11 @@ from env import *
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
+    # Defined in env.py
     SECRET_KEY = SECRET_KEY
+    DB_USERNAME = DB_USERNAME
+    DB_PASSWORD = DB_PASSWORD
+
     @staticmethod
     def init_app(app):
         pass
