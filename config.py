@@ -19,7 +19,7 @@ class DevelopmentConfig(Config):
     TESTING = False
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql://' + Config.DB_USERNAME + ':' + Config.DB_PASSWORD + '@localhost/' + config.DB_USERNAME
+    SQLALCHEMY_DATABASE_URI = 'postgresql://' + Config.DB_USERNAME + ':' + Config.DB_PASSWORD + '@localhost/' + Config.DB_USERNAME
     DEBUG = False
     TESTING = False
 
