@@ -44,6 +44,9 @@ class Post(db.Model):
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     content_html = db.Column(db.Text)
     slug = db.Column(db.String)
+    link_url = db.Column(db.String)
+    link_description = db.Column(db.String)
+    link_title = db.Column(db.String)
 
     @staticmethod
     def on_changed_body(target, value, old_value, initiator):

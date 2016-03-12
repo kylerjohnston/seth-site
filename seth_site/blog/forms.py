@@ -6,6 +6,7 @@ import re
 
 class PostForm(Form):
     title = StringField('Title', validators = [InputRequired()])
+    link = StringField('Link (optional)')
     content = TextAreaField('Post', validators = [InputRequired()])
     submit = SubmitField('Submit')
 

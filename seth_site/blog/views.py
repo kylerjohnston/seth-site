@@ -6,6 +6,8 @@ from ..models import Post
 from .. import db
 import datetime
 from .blog_class import Blog
+from bs4 import BeautifulSoup
+import requests
 
 def page_test(page_num, pages):
     if len(pages) > page_num:
@@ -19,16 +21,49 @@ def page_test(page_num, pages):
 
     return older_pages, newer_pages
 
+def parse_link(url):
+    """ Returns a tuple of three strings:
+        Link url, link title, and link description
+    """
+    try:
+        r = requests.get(url)
+    except:
+        flash('Error: URL could not be requested.')
+        return url, None, None
+    if r.status_code == 200:
+        soup = BeautifulSoup(r.text, 'html5lib')
+        title = soup.title.string
+        description = parse_description(soup)
+        return url, title, description
+    else:
+        flash('Error: request exited with status code {}'.format(str(r.status_code)))
+        return url, None, None
+
+def parse_description(soup):
+    """ Parses meta description tags from BeautifulSoup object """
+    desc = ''
+    for meta in soup.findAll('meta'):
+        if 'description' == meta.get('name', '').lower():
+            desc = meta['content']
+    return desc
+
 @blog.route('/new', methods = ['GET', 'POST'])
 @login_required
 def new():
     form = PostForm()
     if form.validate_on_submit():
+        if form.link.data != '' and form.link.data is not None:
+            url, link_title, link_description = parse_link(form.link.data)
+        else:
+            url, link_title, link_description = None, None, None
         new_post = Post(
             title = form.title.data,
             date = datetime.datetime.today(),
             content = form.content.data,
-            user = current_user)
+            user = current_user,
+            link_url = url,
+            link_description = link_description,
+            link_title = link_title)
         db.session.add(new_post)
         db.session.commit()
         return redirect(url_for('blog.root'))
@@ -86,6 +121,7 @@ def edit(postid):
         return redirect(url_for('blog.post', post_name = post.slug))
     form.title.data = post.title
     form.content.data = post.content
+    form.link.data = post.link_url
     return render_template('blog/edit.html',
                            form = form,
                            postid = postid)

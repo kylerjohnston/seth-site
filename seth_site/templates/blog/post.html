@@ -3,7 +3,7 @@
 {% block page_title %}Seth Baker - {{ post.title }}{% endblock %}
 
 {% block page_content %}
-<div class="row featurette f-dark">
+<div class="row featurette featurette-green">
   <div class="col-xs-12 col-md-8 col-md-offset-2">
     <h2 class="featurette-heading">{{ post.title }}</h2>
     <small>Posted by {{ post.user.name }} on {{ post.date.strftime('%m-%d-%Y') }}.</small>
@@ -13,6 +13,12 @@
     <div class="post">
       <p>{{ post.content_html | safe }}</p>
     </div>
+    {% if post.link_title %}
+    <div class="well">
+      <h3><a href="{{ post.link_url }}">{{ post.link_title }}</a></h3>
+      <p>{{ post.link_description }}</p>
+    </div>
+    {% endif %}
   </div>
 </div>
 

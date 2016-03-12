@@ -10,10 +10,11 @@
     <hr />
   </div>
 </div>
+<br />
 
 {% for post in posts %}
 <div class="row featurette featurette-green">
-  <div class="col-xs-12 col-md-4">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
     <h2>
       <a href="{{ url_for('blog.post', post_name = post.slug) }}" class="blog-heading">{{ post.title }}</a>
     </h2>
@@ -21,11 +22,15 @@
     {% if post.last_modified %}
     <br /><small>Last modified {{ post.last_modified.strftime('%m-%d-%Y at %I:%M%p') }}.</small>
     {% endif %}
-  </div>
-  <div class="col-xs-12 col-md-8">
     <div class="post">
       {{ post.content_html | safe }}
     </div>
+    {% if post.link_title %}
+    <div class="well">
+      <h3><a href="{{ post.link_url }}">{{ post.link_title }}</a></h3>
+      <p>{{ post.link_description }}</p>
+    </div>
+    {% endif %}
     {% if current_user.is_authenticated %}
     <small><a href="{{ url_for('blog.edit', postid = post.id) }}"><i class="fa fa-pencil"></i> edit</a>&nbsp;&nbsp;<a href="{{ url_for('blog.delete', postid = post.id) }}"><i class="fa fa-trash"></i> delete</a></small>
     {% endif %}
