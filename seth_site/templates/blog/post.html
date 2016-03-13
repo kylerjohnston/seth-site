@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block meta_description %}
+<meta name="description" content="{{ description }}">
+{% endblock %}
+
 {% block page_title %}Seth Baker - {{ post.title }}{% endblock %}
 
 {% block page_content %}

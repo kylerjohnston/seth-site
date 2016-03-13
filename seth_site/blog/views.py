@@ -9,6 +9,13 @@ from .blog_class import Blog
 from bs4 import BeautifulSoup
 import requests
 
+def generate_description(post):
+    if len(post) > 160:
+        description = post[0:159].strip()
+    else:
+        description = post.strip()
+    return description
+
 def page_test(page_num, pages):
     if len(pages) > page_num:
         newer_pages = True
@@ -101,9 +108,11 @@ def pages(pagenumber):
 @blog.route('/posts/<post_name>')
 def post(post_name):
     post = Post.query.filter_by(slug = post_name).first()
+    description = generate_description(post.content)
     if post is not None:
         return render_template('blog/post.html',
-                               post = post)
+                               post = post,
+                               description = description)
     else:
         return abort(404)
 
