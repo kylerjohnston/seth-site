@@ -9,7 +9,7 @@
 {% block page_content %}
 <div class="row featurette f-red">
   <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
-    <h2 class="featurette-heading">{{ post.title }}</h2>
+    <h1 class="featurette-heading">{{ post.title }}</h1>
     <hr />
     <small>Posted by {{ post.user.name }} on {{ post.date.strftime('%m-%d-%Y') }}.</small>
     {% if post.last_modified %}
