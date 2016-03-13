@@ -3,15 +3,20 @@
 {% block page_title %}Seth Baker - {{ post.title }}{% endblock %}
 
 {% block page_content %}
-<div class="row featurette featurette-green">
-  <div class="col-xs-12 col-md-8 col-md-offset-2">
+<div class="row featurette f-red">
+  <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
     <h2 class="featurette-heading">{{ post.title }}</h2>
+    <hr />
     <small>Posted by {{ post.user.name }} on {{ post.date.strftime('%m-%d-%Y') }}.</small>
     {% if post.last_modified %}
     <small>Last modified {{ post.last_modified.strftime('%m-%d-%Y at %I:%M%p') }}.</small>
     {% endif %}
+  </div>
+</div>
+<div class="row featurette featurette-green">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
     <div class="post">
-      <p>{{ post.content_html | safe }}</p>
+      {{ post.content_html | safe }}
     </div>
     {% if post.link_title %}
     <div class="well">
