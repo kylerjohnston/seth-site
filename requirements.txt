@@ -1,7 +1,9 @@
 aniso8601==1.1.0
 beautifulsoup4==4.4.1
 bleach==1.4.2
+cssutils==1.0.1
 Flask==0.10.1
+Flask-Assets==0.11
 Flask-Login==0.3.2
 Flask-RESTful==0.3.5
 Flask-Script==2.0.5
@@ -19,5 +21,6 @@ PyYAML==3.11
 requests==2.9.1
 six==1.10.0
 SQLAlchemy==1.0.12
+webassets==0.11.1
 Werkzeug==0.11.3
 WTForms==2.1
