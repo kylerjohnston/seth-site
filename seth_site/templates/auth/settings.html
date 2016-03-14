@@ -4,7 +4,7 @@
 
 {% block page_content %}
 
-<div class="row featurette featurette-green">
+<div class="row featurette featurette-white">
   <div class="col-xs-12 col-md-6 col-md-offset-3">
     <h2 class="featurette-heading">User settings</h2>
     <form action="{{ url_for('auth.settings', userid = current_user.id) }}" method="POST" enctype="multipart/form-data">

@@ -8,7 +8,7 @@
 endblock %}
 
 {% block page_content %}
-<div class="row featurette f-red">
+<div class="row featurette featurette-green">
   <div class="col-xs-12 col-md-8 col-md-offset-2">
     <h1 class="featurette-heading">Contribute</h1>
     <p class="lead">There are two ways you can contribute to my campaign: by making a qualifying donation through the Maine Clean Election Act's Online Qualifying Contribution Service so that I can qualify for Maine Clean Election funding, or by donating seed money for my campaign.</p>
@@ -25,10 +25,8 @@ endblock %}
     </form>
   </div>
 </div>
-<div class="row featurette f-red">
-  <div class="col-xs-12 col-md-8 col-md-offset-2">
-    <p>Contributions to The Committee to Elect Seth Baker are not tax deductible.</p>
-  </div>
-</div>
+{% endblock %}
 
+{% block additional_footer %}
+<p>Contributions to The Committee to Elect Seth Baker are not tax deductible.</p>
 {% endblock %}

@@ -1,23 +1,23 @@
 /* Adapted from Bootstrap's carousel.css */
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700);
+/*@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700);
 
 body {
   font-family: 'Roboto', sans-serif;
   padding: 50px 0px 0px 0px;
   color: #777777;
   background-color: #fdfdfd;
-}
+}*/
 
 .f-light-green {
   background-color: #72889d;
   color: #fdfdfd;
 }
 
-.featurette {
+/*.featurette {
   padding-bottom: 5em;
   padding-left: 2em;
   padding-right: 2em;
-}
+} */
 /* Featurettes
 ------------------------- */
 
@@ -26,83 +26,83 @@ body {
 }
 
 /* Thin out the marketing headings */
-.featurette-heading {
+/*.featurette-heading {
   font-weight: 300;
   line-height: 1;
   letter-spacing: -1px;
-}
+}*/
 
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
   .featurette-heading {
     font-size: 50px;
   }
-}
+}*/
 
-@media (min-width: 992px) {
+/*@media (min-width: 992px) {
   .featurette-heading {
     margin-top: 120px;
   }
-}
+}*/
 
-.featurette-green {
+/*.featurette-green {
   background-color: #fdfdfd; 
   color: #777777;
-}
+}*/
 
-.custom-img {
+/*.custom-img {
   margin-top: 5em;
   border: 10px solid #a5c99f;
-}
+}*/
 
-.navbar-default {
+/*.navbar-default {
   background-color: #fdfdfd;
   border-bottom: 1px solid #b4d2af;
   padding: 0;
   margin-bottom: 0;
-}
+}*/
 
-.navbar-brand {
+/*.navbar-brand {
   color: #6aa65f !important;
 }
 
 .navbar-brand:hover {
   color: #4f7c47 !important;
-}
+}*/
 
-.f-dark {
+/*.f-dark {
   background-color: #365674;
   color: #fdfdfd;
   background: -webkit-linear-gradient(left top, #365674, #72889d);
   background: -o-linear-gradient(left top, #365674, #72889d);
   background: -moz-linear-gradient(left top, #365674, #72889d);
   background: linear-gradient(left top, #365674, #72889d);
-}
+}*/
 
-.f-red {
-  background-color: #6aa65f;
+/*.f-red {
+  background-color: #6aa65f;*/
   /*
   background: -webkit-linear-gradient(left top, #a5c99f, #6aa65f);
   background: -o-linear-gradient(bottom right, #a5c99f, #6aa65f);
   background: -moz-linear-gradient(bottom right, #a5c99f, #6aa65f);
   background: linear-gradient(bottom right, #a5c99f, #6aa65f);
   */
-  color: #fdfdfd;
-}
+/*  color: #fdfdfd;
+}*/
 
-footer {
+/*footer {
   padding: 2em 0em 1em 0em;
   font-size: 0.8em;
-}
+}*/
 
-.wht {
+/*.wht {
   background-color: #fdfdfd;
-}
+}*/
 
-.dl-horizontal {
+/*.dl-horizontal {
   font-size: 1.2em;
 }
 
@@ -114,11 +114,11 @@ footer {
   white-space: normal !important;
   font-weight: 400;
   color: #b4d2af;
-}
+} */
 
-.grn {
+/*.grn {
   color: #6aa65f;
-}
+}*/
 
 strong {
   font-weight: 700;

@@ -1,0 +1,146 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700);
+
+@mixin background-gradient($color1, $color2) {
+  background-color: $color1;
+  background: -webkit-linear-gradient(left top, $color1, $color2);
+  background: -o-linear-gradient(left top, $color1, $color2);
+  background: -moz-linear-gradient(left top, $color1, $color2);
+  background: linear-gradient(left top, $color1, $color2);
+}
+
+$mainfont: 'Roboto', Helvetica, sans-serif;
+$fg-dark: #777777;
+$bg-white: #fdfdfd;
+$light-green: #b4d2af;
+$medium-green: #6aa65f;
+$dark-green: #4f7c47;
+$bg-blue: #365674;
+$bg-bluegrey: #72889d;
+
+/***** Layout *****/
+
+body {
+  font-family: $mainfont;
+  padding: 50px 0px 0px 0px;
+  color: $fg-dark;
+  background-color: $bg-white;
+}
+
+.featurette {
+  padding-bottom: 5em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+footer {
+  padding: 2em 0em 1em 0em;
+  font-size: 0.8em;
+  background-color: $bg-white;
+}
+
+.post {
+  margin-top: 2em;
+  font-size: 16px;
+}
+
+.well {
+  margin-top: 2em;
+}
+
+/***** Navbar *****/
+
+.navbar-default {
+  background-color: $bg-white;
+  border-bottom: 1px solid $light-green;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+/***** Featurettes *****/
+
+.featurette-white {
+  background-color: $bg-white;
+  color: $fg-dark;
+}
+
+.featurette-blue {
+  @include background-gradient($bg-blue, $bg-bluegrey);
+  color: $bg-white;
+}
+
+.featurette-green {
+  @include background-gradient($dark-green, $medium-green);
+  color: $bg-white;
+}
+
+/***** Typography *****/
+
+.blog-heading, .featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+@media (min-width: 768px) {
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+
+  .blog-heading {
+    margin-top: 2em;
+  }
+}
+
+a.blog-heading, a.navbar-brand {
+  color: $medium-green !important;
+}
+
+a.blog-heading:hover, a.navbar-brand:hover {
+  color: $dark-green !important;
+}
+
+.dl-horizontal {
+  font-size: 1.2em;
+}
+
+.dl-horizontal dd {
+  font-weight: 300;
+}
+
+.dl-horizontal dt {
+  white-space: normal !important;
+  font-weight: 400;
+  color: $light-green;
+}
+
+.grn {
+  color: $medium-green;
+}
+
+.post h2 {
+  color: $medium-green;
+}
+
+/***** Images *****/
+
+img#seth-headshot {
+  margin-top: 5em;
+  border: 10px solid $light-green;
+}
+
+img#maine-img {
+  padding: 4em 0 0 0;
+  max-height: 500px;
+}
+
+/***** Buttons *****/
+
+.btn {
+  white-space: normal !important; // force word wrap on buttons
+}

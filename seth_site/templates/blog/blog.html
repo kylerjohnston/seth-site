@@ -8,7 +8,7 @@
 
 {% block page_content %}
 
-<div class="row featurette f-dark">
+<div class="row featurette featurette-blue">
   <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
     <h1 class="featurette-heading">Campaign blog</h1>
     <hr />
@@ -17,9 +17,9 @@
 <br />
 
 {% for post in posts %}
-<div class="row featurette featurette-green">
+<div class="row featurette featurette-white">
   <div class="col-xs-12 col-md-8 col-md-offset-2">
-    <h2>
+    <h2 class="blog-heading">
       <a href="{{ url_for('blog.post', post_name = post.slug) }}" class="blog-heading">{{ post.title }}</a>
     </h2>
     <small>Posted by {{ post.user.name }} on {{ post.date.strftime('%m-%d-%Y') }}.</small>
@@ -43,7 +43,7 @@
 </div>
 {% endfor %}
 
-<div class="row featurette featurette-green">
+<div class="row featurette featurette-white">
   <div class="col-md-4 col-md-offset-4 text-center">
     {% if older_pages %}
     <a href="{{ url_for('blog.pages', pagenumber = page_num - 1) }}" class="btn btn-primary">Newer posts</a>

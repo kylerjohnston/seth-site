@@ -7,7 +7,7 @@
 {% block page_title %}Seth Baker - {{ post.title }}{% endblock %}
 
 {% block page_content %}
-<div class="row featurette f-red">
+<div class="row featurette featurette-green">
   <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
     <h1 class="featurette-heading">{{ post.title }}</h1>
     <hr />
@@ -17,7 +17,7 @@
     {% endif %}
   </div>
 </div>
-<div class="row featurette featurette-green">
+<div class="row featurette featurette-white">
   <div class="col-xs-12 col-md-8 col-md-offset-2">
     <div class="post">
       {{ post.content_html | safe }}
