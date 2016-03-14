@@ -3,4 +3,5 @@ __pycache__/
 venv/
 *.pyc
 env.py
-*/.webassets-cache/
+static/.webassets-cache/
+testing.db
