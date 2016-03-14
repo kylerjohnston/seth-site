@@ -3,7 +3,7 @@ from config import config
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask.ext.assets import Environment
-from .bundles import css_all
+from .bundles import css_all, js_all
 
 db = SQLAlchemy()
 login_manager = LoginManager()
@@ -19,6 +19,7 @@ def create_app(config_name):
     login_manager.init_app(app)
     assets.init_app(app)
     assets.register('css_all', css_all)
+    assets.register('js_all', js_all)
 
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
