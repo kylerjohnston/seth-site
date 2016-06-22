@@ -8,12 +8,14 @@ import datetime
 from .blog_class import Blog
 from bs4 import BeautifulSoup
 import requests
+import random
 
 def generate_description(post):
     if len(post) > 160:
         description = post[0:159].strip()
     else:
         description = post.strip()
+    description += ' ...'
     return description
 
 def page_test(page_num, pages):
@@ -76,13 +78,17 @@ def new():
         return redirect(url_for('blog.root'))
     return render_template('blog/new.html', form = form)
 
-@blog.route('/')
-def root():
+def make_blog():
     blog = Blog()
     try:
         pages = blog.pages[0]
     except:
         pages = []
+    return blog, pages
+
+@blog.route('/')
+def root():
+    blog, pages = make_blog()
     older_pages, newer_pages = page_test(1, blog.pages)
     return render_template('blog/blog.html',
                            posts = pages,
@@ -107,12 +113,31 @@ def pages(pagenumber):
 
 @blog.route('/posts/<post_name>')
 def post(post_name):
+    # Find the requested post
     post = Post.query.filter_by(slug = post_name).first()
     description = generate_description(post.content)
+
+    # Randomly select two "related" posts to show in footer
+    blog, pages = make_blog()
+    pages = [page for page in pages if page.slug != post_name]
+    pages = random.sample(pages, 2)
+    if len(pages) == 2:
+        related = [
+            {
+                'title': page.title,
+                'description': generate_description(page.content),
+                'slug': page.slug
+            }
+            for page in pages
+        ]
+    else:
+        pages = None
+
     if post is not None:
         return render_template('blog/post.html',
                                post = post,
-                               description = description)
+                               description = description,
+                               related = related)
     else:
         return abort(404)
 

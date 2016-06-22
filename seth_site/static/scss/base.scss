@@ -10,6 +10,7 @@
 
 $mainfont: 'Roboto', Helvetica, sans-serif;
 $fg-dark: #777777;
+$black: #333333;
 $bg-white: #fdfdfd;
 $light-green: #b4d2af;
 $medium-green: #6aa65f;
@@ -39,8 +40,11 @@ footer {
 }
 
 .post {
+  color: $black;
+  font-weight: 300;
   margin-top: 2em;
-  font-size: 16px;
+  line-spacing: 1.7;
+  font-size: 18px;
 }
 
 .well {
@@ -76,9 +80,17 @@ footer {
 /***** Typography *****/
 
 .blog-heading, .featurette-heading {
-  font-weight: 300;
   line-height: 1;
   letter-spacing: -1px;
+}
+
+.blog-heading {
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.featurette-heading {
+  font-weight: 300;
 }
 
 @media (min-width: 768px) {
@@ -97,11 +109,19 @@ footer {
   }
 }
 
-a.blog-heading, a.navbar-brand {
+a.blog-heading {
+  color: $black !important;
+}
+
+a.blog-heading:hover {
+  color: $dark-green !important;
+}
+
+a.navbar-brand {
   color: $medium-green !important;
 }
 
-a.blog-heading:hover, a.navbar-brand:hover {
+a.navbar-brand:hover {
   color: $dark-green !important;
 }
 
