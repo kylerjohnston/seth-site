@@ -5,7 +5,10 @@
     {% block meta_description %}{% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>{% block page_title %}{% endblock %}</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
+    {% assets "fontawesome" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+    {% endassets %}
     {% assets "css_all" %}
     <link rel="stylesheet" href="{{ ASSET_URL }}">
     {% endassets %}
@@ -26,7 +29,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{{ url_for('main.index') }}">Seth Baker for State Senate</a>
+          <a class="navbar-brand" href="{{ url_for('main.index') }}">Seth Baker for Maine State Senate</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
@@ -47,8 +50,8 @@
             <li><a href="{{ url_for('auth.logout') }}">Log out</a></li>
             {% endif %}
           </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
+        </div>
+      </div>
     </nav>
     {% endblock %}
 
@@ -99,7 +102,6 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', 'UA-70778406-3', 'auto');
 ga('send', 'pageview');
-
     </script>
   </body>
 </html>
